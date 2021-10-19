@@ -15,6 +15,7 @@ app.get("/", (req, res) => res.send("App is working"));
 app.use("/api", userRouter)
 
 
+
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
 })
