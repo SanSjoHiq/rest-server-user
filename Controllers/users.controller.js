@@ -22,6 +22,16 @@ const getUsers = (req, res) => {
     
 };
 
+const getUser = (req, res) => {
+    User.findById({_id: req.params._id}, (err, foundUser) => {
+        if(!err) {
+            res.status(200).json(foundUser)
+        } else {
+            res.status(404).res.send(err)
+        }
+    })
+}
+
 
 const postUser = (req, res) => {
     const newUser = new User({name: req.body.name})
