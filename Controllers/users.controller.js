@@ -22,6 +22,7 @@ const getUsers = (req, res) => {
     
 };
 
+
 const postUser = (req, res) => {
     const newUser = new User({name: req.body.name})
     newUser.save((err) => {
@@ -33,7 +34,10 @@ const postUser = (req, res) => {
     });
 }
 
+
+
 module.exports = {
     getUsers,
+    getUser,
     postUser
 }
